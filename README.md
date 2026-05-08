@@ -38,7 +38,12 @@ java SimulatorGUI
 ```
 
 ## Resultados e Discussão
-Através da utilização do simulador com a interface gráfica, foi possível realizar testes empíricos para avaliar o comportamento de cada método. A título de demonstração, adotou-se um cenário de teste com a seguinte configuração:
+Através da utilização do simulador com a interface gráfica, foi possível realizar testes empíricos para avaliar o comportamento de cada método. A título de demonstração, adotou-se um cenário de teste exibido na interface do simulador (Figura 1).
+
+![Exemplo de Simulação](assets/exemplo_simulacao.png)
+*Figura 1 - Tela do simulador apresentando o comparativo de resultados para um caso de teste.*
+
+Neste cenário, utilizou-se a seguinte configuração:
 - **Tamanho da memória (Frames):** 3
 - **Fila de páginas (Referências):** 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5
 
