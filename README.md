@@ -38,7 +38,17 @@ java SimulatorGUI
 ```
 
 ## Resultados e Discussão
-Espera-se que o simulador forneça *insights* valiosos sobre o desempenho relativo dos diferentes algoritmos de substituição. Com base nos resultados gráficos exibidos e nas contagens numéricas após a simulação de diferentes cargas de trabalho, observou-se o comportamento de cada método. Como esperado de maneira teórica, em grandes amostras de referência, o algoritmo Ótimo sempre minimiza as faltas de página, sendo seguido de perto pela eficiência do LRU. O método FIFO apresenta, na maioria das vezes, a maior quantidade de faltas de páginas dentre as opções implementadas.
+Através da utilização do simulador com a interface gráfica, foi possível realizar testes empíricos para avaliar o comportamento de cada método. A título de demonstração, adotou-se um cenário de teste com a seguinte configuração:
+- **Tamanho da memória (Frames):** 3
+- **Fila de páginas (Referências):** 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5
+
+Após processar a simulação com a cadeia de 12 páginas, a ferramenta retornou os seguintes resultados acompanhados do gráfico comparativo:
+- Método FIFO - 9 faltas de página
+- Método LRU - 10 faltas de página
+- Método do Relógio - 9 faltas de página
+- Método Ótimo - 7 faltas de página
+
+Na análise deste caso específico, observa-se que o **Método Ótimo**, por conseguir "prever" as futuras requisições de páginas, apresentou o melhor desempenho com apenas 7 faltas de página, servindo perfeitamente como referência ideal. Por outro lado, um ponto de discussão interessante ocorreu entre os métodos LRU e FIFO/Relógio: para esta carga de trabalho específica, o LRU apresentou o pior desempenho (10 faltas), evidenciando que em sequências cíclicas onde páginas recém-utilizadas demoram a ser requisitadas novamente, o princípio da localidade temporal pode ser penalizado em comparação ao FIFO puro ou ao Relógio.
 
 ## Conclusão
 A implementação do simulador demonstrou na prática o funcionamento e as diferenças de eficiência envolvidas no gerenciamento da memória virtual de um Sistema Operacional. A possibilidade de visualizar os resultados quantitativamente e através de um gráfico comparativo tornou evidente o impacto da escolha correta de um algoritmo de substituição de páginas de acordo com a carga de trabalho submetida. A ferramenta atendeu com sucesso todos os objetivos propostos.
